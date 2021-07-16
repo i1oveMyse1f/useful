@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Generation",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/generate_samples_gpt2.py",
+            "justMyCode": false,
+            "args": [
+                "--activation-type", "geglu",
+                "--add-lm-output",
+                "--model-parallel-size", "1",
+                "--pipe-parallel-size", "1",
+                "--load", "./snapshot4/checkpoint",
+                "--num-layers", "2",
+                "--hidden-size", "768",
+                "--num-attention-heads", "12",
+                "--seq-length", "1024",
+                "--intermediate-size", "2048",
+                "--out-seq-length", "1024",
+                "--max-position-embeddings", "1024",
+                "--tokenizer-type", "gena_sp",
+                "--fp16",
+                "--batch-size", "1",
+                "--vocab-file", "./input/sp_128k_20201216.model",
+                "--scoring-mode",
+                "--deepspeed",
+                "--deepspeed_config", "./deepspeed.cfg",
+                "--sample-input-yt-table", "//home/search-functionality/hawkeoni/input100",
+                "--sample-input-yt-context-column", "source",
+                "--sample-input-yt-suffix-column", "suffix",
+                "--sample-output-yt-table", "//home/search-functionality/hawkeoni/sample_output_custom_nirvana"
+            ],
+            "env": {"CUDA_VISIVLE_DEVICES": "6,7"},
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+    ]
+}
