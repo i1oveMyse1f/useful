@@ -1,0 +1,4 @@
+ssh zomb-mlp-gpu.zombie.yandex.net
+tmux -CC attach
+ssh -N -f -L 7777:localhost:8891 zomb-mlp-gpu.zombie.yandex.net
+
