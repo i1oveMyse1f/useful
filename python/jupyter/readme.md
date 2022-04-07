@@ -2,14 +2,14 @@
 
 1. to install
 
-        pip3 install jupyterlab
+        pip3 install notebook
 
 2. Useful settings
 
         pip3 install jupyter_contrib_nbextensions
         pip3 install jupyter_nbextensions_configurator
         jupyter nbextensions_configurator enable
-        jupyter contrib nbextensions install 
+        jupyter contrib nbextensions install --user
 
 After installation, you need to restart Jupyter.
 If everything ok, then the 4th Nbextensions tab will appear in the Jupyter Notebook.
